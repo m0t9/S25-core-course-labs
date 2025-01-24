@@ -14,6 +14,8 @@ popular and well known in community.
 Configured `golangci-lint` linter was used to maintain code readability and safety.
 This is most widely used and efficient Go linter.
 
+`gofumpt` popular formatter was used to maintain code formatting.
+
 ## Testing
 
 Web application was tested manually.

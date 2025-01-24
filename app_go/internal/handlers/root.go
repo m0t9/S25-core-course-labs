@@ -32,7 +32,6 @@ func getRandomFact() string {
 
 	num := rand.IntN(maxRandomNumber)
 	resp, err := http.Get(fmt.Sprintf(api, num))
-
 	if err != nil {
 		return noAnswer
 	}
@@ -42,5 +41,4 @@ func getRandomFact() string {
 		return noAnswer
 	}
 	return string(fact)
-
 }
