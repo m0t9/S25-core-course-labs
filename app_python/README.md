@@ -22,3 +22,25 @@ uvicorn main:app --reload
 # Testing
 curl http://127.0.0.1:8000
 ```
+
+## Docker
+
+### Build
+
+```bash
+cd S25-core-course-labs/app_python
+docker build -t pyapp .
+```
+
+### Pull & Run
+
+```bash
+# Pulling the image
+docker pull m0t9docker/pyapp:latest
+
+# Running the container
+docker run -d -p 8000:8000 m0t9docker/pyapp:latest
+
+# Testing
+curl http://127.0.0.1:8000
+```
