@@ -4,7 +4,7 @@
 
 This web application returns Moscow time on the `/` page.
 
-## Installation and running
+## Local installation and running
 
 ```bash
 # Installing the repo itself
