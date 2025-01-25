@@ -21,3 +21,25 @@ go run main.go
 # Testing
 curl http://127.0.0.1:8080
 ```
+
+## Docker
+
+### Build
+
+```bash
+cd S25-core-course-labs/app_go
+docker build -t goapp .
+```
+
+### Pull & Run
+
+```bash
+# Pulling the image
+docker pull m0t9docker/goapp:latest
+
+# Running the container
+docker run -d -p 8000:8080 m0t9docker/goapp:latest
+
+# Testing
+curl http://127.0.0.1:8000
+```
