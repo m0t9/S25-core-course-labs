@@ -38,3 +38,19 @@ This allows effective reuse of the cache from the previous layers.
 
 `.dockerignore` file allows ignoring files from the build context, increasing
 efficiency of image build process.
+
+## Distroless image
+
+I've also built a Distroless image for the Go application.
+The build process is described in `README.md`.
+
+The resulting Distroless image size is almost 3 times less than original one.
+This is because Distroless base image does not include shells, package managers and other OS features.
+Some of them (e.g., shell) can be enabled with `debug` tag.
+
+Distroless based `goapp` image on Docker hub can be seen [here](https://hub.docker.com/repository/docker/m0t9docker/goapp_distro/general).
+
+![Comparison of images sizes](image-size-comparison.png "Image sizes comparison")
+
+Due to the nature of compiled Go language, I needed only binary file and static ones in final image.
+I didn't update code anyhow.
