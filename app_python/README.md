@@ -44,3 +44,25 @@ docker run -d -p 8000:8000 m0t9docker/pyapp:latest
 # Testing
 curl http://127.0.0.1:8000
 ```
+
+### Distroless Image Version
+
+#### Build
+
+```bash
+cd S25-core-course-labs/app_python
+docker build -f distroless.Dockerfile -t pyapp_distro .
+```
+
+#### Pull & Run
+
+```bash
+# Pulling the image
+docker pull m0t9docker/pyapp_distro:latest
+
+# Running the container
+docker run -d -p 8000:8000 m0t9docker/pyapp_distro:latest
+
+# Testing
+curl http://127.0.0.1:8000
+```

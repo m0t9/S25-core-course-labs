@@ -28,7 +28,7 @@ curl http://127.0.0.1:8080
 
 ```bash
 cd S25-core-course-labs/app_go
-docker build -t goapp .
+docker build -f Dockerfile -t goapp .
 ```
 
 ### Pull & Run
@@ -39,6 +39,28 @@ docker pull m0t9docker/goapp:latest
 
 # Running the container
 docker run -d -p 8000:8080 m0t9docker/goapp:latest
+
+# Testing
+curl http://127.0.0.1:8000
+```
+
+### Distroless Image Version
+
+#### Build
+
+```bash
+cd S25-core-course-labs/app_go
+docker build -f distroless.Dockerfile -t goapp_distro .
+```
+
+#### Pull & Run
+
+```bash
+# Pulling the image
+docker pull m0t9docker/goapp_distro:latest
+
+# Running the container
+docker run -d -p 8000:8080 m0t9docker/goapp_distro:latest
 
 # Testing
 curl http://127.0.0.1:8000
