@@ -11,7 +11,8 @@ The image can be seen [here](https://hub.docker.com/repository/docker/m0t9docker
 
 ### Minimal base image
 
-I've used Golang `alpine`-based image with minimal size to enhance building speed, decrease final image size as well as number of vulnerabilities.
+I've used Golang `alpine`-based image with minimal size to enhance building speed,
+decrease final image size as well as number of vulnerabilities.
 
 ### Pinned base image version
 
@@ -20,7 +21,8 @@ This allows me (for now) to use only latest stable version and not start using `
 
 ### Non-root user
 
-In Dockerfile for the final image I've created a usergroup with user with limited permissions (in comparison with `root`) to decrease security risks in the final image.
+In Dockerfile for the final image I've created a usergroup with user with
+limited permissions (in comparison with `root`) to decrease security risks in the final image.
 
 ### Multi-stage build
 
