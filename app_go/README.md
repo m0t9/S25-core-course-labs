@@ -10,8 +10,12 @@ This web application returns a random fact about a randomly generated number.
 # Installing the repo itself
 git clone https://github.com/m0t9/S25-core-course-labs -b lab1
 
-# Running
-cd S25-core-course-labs/app_go/cmd/numerologist
+# Download dependencies
+cd S25-core-course-labs/app_go
+go mod download
+
+# Running application
+cd cmd/numerologist
 go run main.go
 
 # Testing
