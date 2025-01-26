@@ -16,6 +16,8 @@ This is most widely used and efficient Go linter.
 
 `gofumpt` popular formatter was used to maintain code formatting.
 
+In the implemented Go application logging is enabled for troubleshooting and debugging.
+
 ## Testing
 
 Web application was tested manually.

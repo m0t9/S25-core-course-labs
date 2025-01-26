@@ -12,13 +12,11 @@ import (
 func New(cfgs ...fiber.Config) *fiber.App {
 	s := fiber.New(cfgs...)
 
-	// Register static files.
-	s.Static("/static", "./static")
+	// Enable logging.
+	s.Use(logger.New())
 
 	// Register handlers.
 	handlers.RegisterAll(s)
-
-	s.Use(logger.New())
 
 	return s
 }
