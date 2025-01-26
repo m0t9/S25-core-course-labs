@@ -13,5 +13,9 @@ In order to keep this project maintainable I've used simply configured
 
 ## Testing
 
-Web application was tested manually, refreshing the page and comparing the time with the answer of [following resource](https://www.timeanddate.com/worldclock/russia/moscow).
-It can also be automated with `curl`.
+`pytest` Python framework together with `fastapi.TestClient` is used to comprehensively test an application.
+
+Tests check
+
+- whether time returned by API is actually correct
+- whether the page with time returned by API will be updated after some time
