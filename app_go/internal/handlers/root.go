@@ -10,7 +10,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
-// NewRoot creates a handler for the root page returning random number fact.
+// NewRoot creates a handler for the root page returning fact about random number.
 func NewRoot() func(*fiber.Ctx) error {
 	file := "./static/index.html"
 	content, err := os.ReadFile(file)
@@ -20,17 +20,18 @@ func NewRoot() func(*fiber.Ctx) error {
 
 	template := string(content)
 	return func(c *fiber.Ctx) error {
-		return c.Type("html").SendString(fmt.Sprintf(template, getRandomFact()))
+		const maxRandomNumber = 2024
+		num := rand.IntN(maxRandomNumber)
+
+		return c.Type("html").SendString(fmt.Sprintf(template, getNumberFact(num)))
 	}
 }
 
-// getRandomFact goes to API and pulls a random fact.
-func getRandomFact() string {
-	const maxRandomNumber = 2024
+// getNumberFact uses numbersapi to return fact about given number.
+func getNumberFact(num int) string {
 	const api = "http://numbersapi.com/%d"
 	const noAnswer = "Unfortunately, no fact for today :("
 
-	num := rand.IntN(maxRandomNumber)
 	resp, err := http.Get(fmt.Sprintf(api, num))
 	if err != nil {
 		return noAnswer
