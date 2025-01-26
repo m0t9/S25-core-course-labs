@@ -65,3 +65,9 @@ docker run -d -p 8000:8080 m0t9docker/goapp_distro:latest
 # Testing
 curl http://127.0.0.1:8000
 ```
+
+## Testing
+
+```bash
+go test -race ./...
+```

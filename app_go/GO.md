@@ -20,5 +20,5 @@ In the implemented Go application logging is enabled for troubleshooting and deb
 
 ## Testing
 
-Web application was tested manually.
-Several attempts to get facts about numbers returned different interesting results.
+Web application was tested with usual Go `testing` and `httptest` packages whether it is
+able to return responses with 200th status code.

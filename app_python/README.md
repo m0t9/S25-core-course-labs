@@ -70,6 +70,5 @@ curl http://127.0.0.1:8000
 ## Testing
 
 ```bash
-pip3 install -r requirements.txt
 pytest test_main.py
 ```

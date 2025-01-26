@@ -1,4 +1,5 @@
 """Tests for Moscow time Python application"""
+
 import time
 from datetime import datetime
 
