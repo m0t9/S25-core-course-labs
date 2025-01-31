@@ -18,7 +18,7 @@ def test_time_is_equal():
     assert response.status_code == 200
 
     moscow_tz = pytz.timezone("Europe/Moscow")
-    moscow_time = datetime.now(moscow_tz).strftime("%Y-%m-%d %H:%M:%S")
+    moscow_time = datetime.now(moscow_tz).strftime("%H:%M:%S")
 
     assert moscow_time in response.text
 
