@@ -37,7 +37,7 @@ jobs:
       run: pip install pylint
 
     - name: Run Pylint
-      run: pylint --rcfile=.pylintrc
+      run: pylint --rcfile=.pylintrc .
 
   test:
     defaults:
@@ -61,6 +61,5 @@ jobs:
           pip install -r requirements.txt
 
       - name: Test with pytest
-        run: |
-          PYTHONPATH=. pytest
+        run: pytest .
 
