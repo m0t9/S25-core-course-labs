@@ -1,10 +1,6 @@
 name: Python app workflow
 
 on:
-  push:
-    paths:
-    - 'app_python/**'
-    - '.github/workflows/app_python.yml'
   pull_request:
     paths:
     - 'app_python/**'
@@ -17,6 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: psf/black@stable
+        with:
+          options: "--check --diff"
+          src: "./app_python"
 
   lint:
     name: Run pylint
@@ -32,6 +31,7 @@ jobs:
       uses: actions/setup-python@v5
       with:
         python-version: '3.11'
+        cache: 'pip'
 
     - name: Install Pylint
       run: pip install pylint
