@@ -1,5 +1,7 @@
 # Go Numerology application
 
+![workflow](https://github.com/m0t9/S25-core-course-labs/actions/workflows/app_go.yml/badge.svg)
+
 ## Overview
 
 This web application returns a random fact about a randomly generated number.
