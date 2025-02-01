@@ -1,5 +1,7 @@
 # Python Moscow time application
 
+![workflow](https://github.com/m0t9/S25-core-course-labs/actions/workflows/app_python.yml/badge.svg)
+
 ## Overview
 
 This web application returns Moscow time on the `/` page.
