@@ -25,3 +25,8 @@ The same is applied to Docker build action.
 
 I do not reveal any secret tokens in source code or workflow because
 I have inherited them in GitHub Actions settings.
+
+## 6. Snyk vulnerabilities check
+
+I use Snyk action to check vulnerabilities in my code
+and its dependencies.
