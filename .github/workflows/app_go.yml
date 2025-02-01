@@ -9,9 +9,6 @@ on:
 jobs:
   lint:
     name: Run golang-ci lint
-    defaults:
-      run:
-        working-directory: app_go
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
@@ -21,6 +18,8 @@ jobs:
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v6
         with:
+          working-directory: app_go
+          args: --config=.golangci.yml
           version: v1.60
 
   test:
