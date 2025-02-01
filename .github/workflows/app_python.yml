@@ -72,7 +72,8 @@ jobs:
   security-check:
     runs-on: ubuntu-latest
     defaults:
-      working-directory: app_python
+      run:
+        working-directory: app_python
     needs: [lint, test]
     steps:
       - uses: actions/checkout@master
