@@ -15,6 +15,7 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version: 1.23
+          cache-dependency-path: "**/*.sum"
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v6
         with:
@@ -33,6 +34,7 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version: 1.23.5
+          cache-dependency-path: "**/*.sum"
       - name: run testing
         run: go test -race ./...
 
@@ -40,7 +42,7 @@ jobs:
     runs-on: ubuntu-22.04
     needs: [lint, test]
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v4
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/golang@master
         with:
