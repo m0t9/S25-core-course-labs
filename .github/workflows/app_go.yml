@@ -1,0 +1,38 @@
+name: Go app workflow
+
+on:
+  pull_request:
+    paths:
+    - 'app_go/**'
+    - '.github/workflows/app_go.yml'
+
+jobs:
+  lint:
+    name: Run golang-ci lint
+    defaults:
+      run:
+        working-directory: app_go
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: 1.23
+      - name: golangci-lint
+        uses: golangci/golangci-lint-action@v6
+        with:
+          version: v1.60
+
+  test:
+    name: Run go test 
+    defaults:
+      run:
+        working-directory: app_go
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: 1.23.5
+      - name: run testing
+        run: go test -race ./...
