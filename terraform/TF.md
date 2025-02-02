@@ -1,5 +1,14 @@
 # Terraform
 
+## Best practices
+
+1. I do not share any tokens or other private variables values because
+of using ignored files with envs.
+
+2. For the Terraform I configured `.gitignore` file
+
+3. Before running, I use `terraform fmt` and `terraform validate` to check configuration.
+
 ## Docker
 
 ### `terraform state list`
@@ -302,3 +311,63 @@ python_container_ports = tolist([
 ```
 
 ## Yandex Cloud
+
+Do not have access to free plan :(
+
+## GitHub
+
+### `terraform apply`
+
+The output of application of `terraform apply` to my repo is following
+
+```bash
+╰─➤  terraform apply                                                 
+github_repository.repo: Refreshing state... [id=S25-core-course-labs]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+  ~ update in-place
+
+Terraform will perform the following actions:
+
+  # github_branch_default.master will be created
+  + resource "github_branch_default" "master" {
+      + branch     = "master"
+      + id         = (known after apply)
+      + repository = "devops-labs"
+    }
+
+  # github_branch_protection.default will be created
+  + resource "github_branch_protection" "default" {
+      + allows_deletions                = false
+      + allows_force_pushes             = false
+      + blocks_creations                = false
+      + enforce_admins                  = true
+      + id                              = (known after apply)
+      + pattern                         = "master"
+      + repository_id                   = "S25-core-course-labs"
+      + require_conversation_resolution = true
+      + require_signed_commits          = false
+      + required_linear_history         = false
+
+      + required_pull_request_reviews {
+          + required_approving_review_count = 0
+        }
+    }
+
+  # github_repository.repo will be updated in-place
+  ~ resource "github_repository" "repo" {
+      ~ auto_init                   = false -> true
+        id                          = "S25-core-course-labs"
+      ~ name                        = "S25-core-course-labs" -> "devops-labs"
+        # (31 unchanged attributes hidden)
+    }
+
+Plan: 2 to add, 1 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+```
