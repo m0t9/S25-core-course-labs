@@ -30,3 +30,8 @@ I have inherited them in GitHub Actions settings.
 
 I use Snyk action to check vulnerabilities in my code
 and its dependencies.
+
+## 7. Multi-platform Docker image building
+
+With GitHub Actions it is convenient to build a Docker image for multiple target platforms.
+I did it in the corresponding action.
